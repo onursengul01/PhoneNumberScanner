@@ -1,13 +1,15 @@
 # This program is an automation(I made it simpler to use for users) of a program called PhoneInfoga and it is used to scan phone 
 # numbers such and find  their country, area, carrier and line type. I made it simpler to use it hope you find my automation usefull.
-# This program works on linux and in windows also you need python3 installed in order to run this prgoram. 
+# This program works on linux and in the future i will make it compatible for windows. 
  
 
 import os
 import os.path
 import sys
 
-
+if os.getuid() != 0:
+	print("Sorry. This script requires sudo privledges")
+	sys.exit()
 
 class PhoneTracker:
     def PhoneInfogaCheker(self):
